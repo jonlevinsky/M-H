@@ -30,6 +30,10 @@
         font-size: 90px;
         text-align: center;
       }
+      #countdown1 {
+        font-size: 45;
+        text-align: center;
+      }
       h2 {
         text-align: center;
         font-weight: 100;
@@ -86,6 +90,7 @@
     <div id="counter">
       <h1>Máca & Honza</h1>
       <div id="countdown"></div>
+      <div id="countdown1"></div>
       <h2>~ 28. 1. 2023 ~</h2>
     </div>
     <div id="goals">
@@ -115,13 +120,41 @@
         var distance = now - countDownDate;
         
         // výpočet dnů, hodin, minut a sekund
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24) - 30 * months);
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
+
+        //skloňování
+        if (months > 1) {
+          mm = " Měsíců ";
+        } else {
+          mm = " Měsíc ";
+        }
+
+        if (days > 1) {
+          dd = " Dní ";
+        } else {
+          dd = " Den ";
+        }
+
+        if (hours > 1) {
+          hh = " Hodin ";
+        } else {
+          hh = " Hodinu ";
+        }
+
+        if (minutes > 1) {
+          mmm = " Minut ";
+        } else {
+          mmm = " Minutu ";
+        }
+
         // vypsání výsledku do elementu na stránce
-        document.getElementById("countdown").innerHTML = "♡ " + days + " Dní " + "& " + hours + " Hodin " + "♡"
+        document.getElementById("countdown").innerHTML = "♡ " + months + mm + "& " + days + dd + "♡"
+
+        document.getElementById("countdown1").innerHTML = hours + hh + " & " + minutes + mmm
         
         // pokud se dosáhne konce, vypsání textu na stránce
         if (distance < 0) {

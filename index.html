@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>♡ 𝓜&𝓗 ♡</title>
+    <link rel="icon" type="image/x-icon" href="icon.png">
     <style>
       @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
       *
@@ -147,10 +148,13 @@
         }
 
         // vypsání výsledku do elementu na stránce
-        document.getElementById("countdown").innerHTML = "♡ " + months + mm + "& " + days + dd + "♡"
 
-        document.getElementById("countdown1").innerHTML = hours + hh + " & " + minutes + mmm
-        
+        if (days < 1) {
+          document.getElementById("countdown").innerHTML = "✨ Výročí " + months + mm + " ✨";
+        } else {
+          document.getElementById("countdown").innerHTML = "♡ " + months + mm + "& " + days + dd + "♡";
+        }
+
         // pokud se dosáhne konce, vypsání textu na stránce
         if (distance < 0) {
           clearInterval(x);

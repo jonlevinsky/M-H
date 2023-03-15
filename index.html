@@ -21,7 +21,19 @@
         text-shadow: 0 0 30px #ca1414;
         color: #e22020;
         display: block;
+        animation: animate-bg 30s ease-in-out alternate infinite;
       }
+    @keyframes animate-bg {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 0% 5%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
       h1 {
         text-align: center;
         font-weight: 400;

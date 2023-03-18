@@ -1,178 +1,37 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="cs">
+
   <head>
+
     <title>♡ 𝓜&𝓗 ♡</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="icon.png">
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-      *
-      {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-        cursor: default;
-        text-decoration: none;
-      }
-      body {
-        background-color: #121013;
-        background-image: url(background.png);
-        top: 50%;
-        text-shadow: 0 0 30px #ca1414;
-        color: #e22020;
-        display: block;
-        animation: animate-bg 30s ease-in-out alternate infinite;
-      }
-    @keyframes animate-bg {
-      0% {
-        background-position: 0% 0%;
-      }
-      50% {
-        background-position: 0% 5%;
-      }
-      100% {
-        background-position: 0% 0%;
-      }
-    }
-      h1 {
-        text-align: center;
-        font-weight: 400;
-        margin-top: 150px;
-      }
-      #countdown {
-        font-size: 90px;
-        text-align: center;
-      }
-      h2 {
-        text-align: center;
-        font-weight: 100;
-        font-style: italic;
-      }
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts.js"></script>
 
-
-
-      #goals{
-        margin-top: 150px;
-      }
-      h3 {
-        margin-top: 20px;
-        margin-left: 100px;
-        font-weight: 300;
-      }
-      p {
-        margin-left: 150px;
-        font-weight: 100;
-        font-style: italic;
-        font-size: 20px;
-      }
-      p2{
-        opacity: 0;
-        font-style: italic;
-        transition: 0.1s ease-in-out;
-        text-decoration: none;
-        color: #e22020;
-        cursor: pointer;
-      }
-      a{
-        opacity: 0;
-        font-style: italic;
-        transition: 0.1s ease-in-out;
-        text-decoration: none;
-        color: #e22020;
-        cursor: pointer;
-      }
-      p:hover p2{
-        opacity: 1;
-        transition: 0.1s ease-in-out;
-      }
-      p:hover p1{
-        opacity: 0;
-        transition: 0.1s ease-in-out;
-      }
-      p:hover a{
-        opacity: 1;
-        transition: 0.1s ease-in-out;
-      }
-    </style>
   </head>
+
   <body>
-    <div id="counter">
-      <h1>Máca & Honza</h1>
-      <div id="countdown"></div>
-      <h2>~ 28. 1. 2023 ~</h2>
-    </div>
-    <div id="goals">
-      <h3>Seznámení:</h3>
-        <p>~ 16. 1. 2023 <p1>~</p1><p2>Omegle ~</p2>
-      <h3>Setkání:</h3>
-        <p>~ 28. 2. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/aS8mmtCG1JGbdopd6">50.0844828, 14.4133795 ~</a></p>
+
+  <div id="counter">
+    <h1>Máca & Honza</h1>
+    <div id="countdown"></div>
+    <h2>~ 28. 1. 2023 ~</h2>
+  </div>
+
+  <div id="goals">
+    <h3>Seznámení:</h3>
+      <p>~ 16. 1. 2023 ~</p>
+    <h3>Setkání:</h3>
+      <p>~ 28. 2. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/aS8mmtCG1JGbdopd6">50.0844828, 14.4133795 ~</a></p>
+    <h3>První Pusa:</h3>
+      <p>~ 28. 2. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/vdWRGC4AwAiCtJZM7">50.082080, 14.423738 ~</a></p>
       <h3>První Polibek:</h3>
-        <p>~ 28. 2. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/vdWRGC4AwAiCtJZM7">50.082080, 14.423738 ~</a></p>
-    </div>
-    
-    
-    
-    
-    
-    <script>
-      // zadání data
-      var countDownDate = new Date("January 28, 2023 00:00:00").getTime();
-      
-      // aktualizace časovače každou sekundu
-      var x = setInterval(function() {
+      <p>~ 17. 3. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/aFKZwoAbc2MfwFs2A">50.082826, 14.409696 ~</a></p>
+  </div>
 
-        // získání aktuálního času
-        var now = new Date().getTime();
-        
-        // výpočet zbývajícího času
-        var distance = now - countDownDate;
-        
-        // výpočet dnů, hodin, minut a sekund
-        var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24) - 30 * months);
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        //skloňování
-        if (months > 1) {
-          mm = " Měsíců ";
-        } else {
-          mm = " Měsíc ";
-        }
-
-        if (days > 1) {
-          dd = " Dní ";
-        } else {
-          dd = " Den ";
-        }
-
-        if (hours > 1) {
-          hh = " Hodin ";
-        } else {
-          hh = " Hodinu ";
-        }
-
-        if (minutes > 1) {
-          mmm = " Minut ";
-        } else {
-          mmm = " Minutu ";
-        }
-
-        // vypsání výsledku do elementu na stránce
-
-        if (days < 1) {
-          document.getElementById("countdown").innerHTML = "✨ Výročí " + months + mm + " ✨";
-        } else {
-          document.getElementById("countdown").innerHTML = "♡ " + months + mm + "& " + days + dd + "♡";
-        }
-
-        // pokud se dosáhne konce, vypsání textu na stránce
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("countdown").innerHTML = "Už spolu jsme!";
-        }
-      }, 1000);
-    </script>
   </body>
+
 </html>

@@ -1,29 +1,121 @@
+<div class="phone">
+  <div class="dm-container sent">
+    <div class="dm-bubble sent">
+      <p class="dm-text">Ahoj, jak se máš?</p>
+    </div>
+    <p class="dm-time">20:30</p>
+  </div>
+  <div class="dm-container received">
+    <div class="dm-avatar">
+      <img src="https://example.com/profile.jpg" alt="Profilová fotka">
+    </div>
+    <div class="dm-bubble received">
+      <p class="dm-text">Dobře, díky. A ty?</p>
+    </div>
+    <p class="dm-time">20:35</p>
+  </div>
+  <div class="dm-container sent">
+    <div class="dm-bubble sent">
+      <p class="dm-text">Taky dobře, co dneska děláš?</p>
+    </div>
+    <p class="dm-time">20:40</p>
+  </div>
+</div>
+
+
+
+
 <style>
-body {
-  height: 100%;
-  background: #000;
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.rain {
-  position: fixed;
-  top: 0;
-  left: 0;
+.phone {
+  position: relative;
+  width: 375px;
+  height: 667px;
+  background-color: #000;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dm-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  margin: 20px 0;
+}
+
+.dm-profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.dm-bubble {
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 20px;
+  max-width: 70%;
+  margin: 0 10px;
+}
+
+.dm-bubble.sent{
+  background-color: #262626;
+}
+
+.dm-bubble.received{
+  border: 1px solid #363636;
+  background-color: #000;
+}
+
+.dm-bubble:before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 30px;
+  border: 8px solid transparent;
+  border-top-color: #f3f3f3;
+}
+
+.dm-time {
+  font-size: 12px;
+  color: #999;
+  margin: 0 10px;
+}
+
+.dm-text {
+  color: #fff;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.dm-container.received {
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.dm-avatar {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.dm-avatar img {
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5"%3E%3Cpath fill="%23FFF" d="M0 0h1v5H0zM1 0h1v5H1zM2 0h1v5H2zM3 0h1v5H3zM4 0h1v5H4z"/%3E%3C/svg%3E');
-  background-repeat: repeat;
-  animation: rain 1s linear infinite;
+  object-fit: cover;
 }
 
-@keyframes rain {
-  from {
-    background-position: 0 0, 0 0, 0 0;
-  }
-  to {
-    background-position: 500px 1000px, 250px 500px, 100px 200px;
-  }
+.dm-bubble {
+  margin: 0 10px 0 0;
 }
+
 
 </style>
-<div class="rain"></div>

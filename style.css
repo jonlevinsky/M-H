@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    cursor: default;
+    text-decoration: none;
+}
+body {
+    background-color: #121013;
+    background-image: url(background.png);
+    top: 50%;
+    text-shadow: 0 0 30px #ca1414;
+    color: #e22020;
+    display: block;
+    animation: animate-bg 30s ease-in-out alternate infinite;
+}
+@keyframes animate-bg {
+0% {
+    background-position: 0% 0%;
+}
+50% {
+    background-position: 0% 5%;
+}
+100% {
+    background-position: 0% 0%;
+}
+}
+
+
+    h1 {
+        text-align: center;
+        font-weight: 400;
+        margin-top: 150px;
+    }
+    #countdown {
+        font-size: 90px;
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+        font-weight: 100;
+        font-style: italic;
+    }
+
+
+
+    #goals{
+        margin-top: 150px;
+    }
+    h3 {
+        margin-top: 20px;
+        margin-left: 100px;
+        font-weight: 300;
+    }
+    p {
+        margin-left: 150px;
+        font-weight: 100;
+        font-style: italic;
+        font-size: 20px;
+    }
+    p2{
+        opacity: 0;
+        font-style: italic;
+        transition: 0.1s ease-in-out;
+        text-decoration: none;
+        color: #e22020;
+        cursor: pointer;
+    }
+    a{
+        opacity: 0;
+        font-style: italic;
+        transition: 0.1s ease-in-out;
+        text-decoration: none;
+        color: #e22020;
+        cursor: pointer;
+    }
+    p:hover p2{
+        opacity: 1;
+        transition: 0.1s ease-in-out;
+    }
+    p:hover p1{
+        opacity: 0;
+        transition: 0.1s ease-in-out;
+    }
+    p:hover a{
+        opacity: 1;
+        transition: 0.1s ease-in-out;
+    }

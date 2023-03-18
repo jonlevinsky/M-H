@@ -44,7 +44,9 @@
     if (days < 1) {
         document.getElementById("countdown").innerHTML = "✨ Výročí " + months + mm + " ✨";
     } else {
-        document.getElementById("countdown").innerHTML = "♡ " + months + mm + "& " + days + dd + "♡";
+        var mmonths = "♡ " + months + mm;
+        var ddays = days + dd + "♡";
+        document.getElementById("countdown").innerHTML = mmonths + "& " + ddays;
     }
 
     // pokud se dosáhne konce, vypsání textu na stránce

@@ -35,9 +35,19 @@ body {
         font-weight: 400;
         margin-top: 150px;
     }
-    #countdown {
-        font-size: 90px;
-        text-align: center;
+    @media screen and (max-width: 600px) {
+        #countdown {
+            margin: auto;
+            max-width: 450px;
+            font-size: 90px;
+            text-align: center;
+        }
+    }
+    @media screen and (min-width: 600px) {
+        #countdown {
+            font-size: 90px;
+            text-align: center;
+        }
     }
     h2 {
         text-align: center;

@@ -48,10 +48,4 @@
         var ddays = days + dd + "♡";
         document.getElementById("countdown").innerHTML = mmonths + "& " + ddays;
     }
-
-    // pokud se dosáhne konce, vypsání textu na stránce
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("countdown").innerHTML = "Už spolu jsme!";
-    }
-    }, 1000);
+    }, 10000);

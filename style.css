@@ -1,3 +1,4 @@
+    /* Všechno */
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 *
 {
@@ -28,7 +29,7 @@ body {
     background-position: 0% 0%;
 }
 }
-
+/* Counter */
 
     h1 {
         text-align: center;
@@ -42,11 +43,20 @@ body {
             font-size: 90px;
             text-align: center;
         }
+
+        #oznameni {
+            width: 450px;
+        }
+
     }
     @media screen and (min-width: 600px) {
         #countdown {
             font-size: 90px;
             text-align: center;
+        }
+
+        #oznameni {
+            max-width: auto;
         }
     }
     h2 {
@@ -98,4 +108,82 @@ body {
     p:hover a{
         opacity: 1;
         transition: 0.1s ease-in-out;
+    }
+
+/* Oznámení */
+    #oznameni {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 30px;
+        background-color: rgba(0, 0, 0, 0.61);
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgb(0, 0, 0);
+        z-index: 9999;
+    }
+  
+    #oznameni p {
+        color: #fff;
+        font-style: normal;
+        text-shadow: none;
+        text-align: center;
+        margin: auto;
+    }
+
+    #oznameni h1 {
+        color: #ff0000;
+        font-style: normal;
+        text-shadow: none;
+        text-align: center;
+        margin: auto;
+    }
+
+    #oznameni.zobrazit {
+        display: block;
+        animation: vyjeti 0.5s forwards;
+    }
+
+    #oznameni.zavrit {
+        animation: zajeti 0.5s forwards;
+    }
+
+    #zavrit {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        background-color: #5a545477;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #zavrit x {
+        color: #fff;
+        text-shadow: none;
+        margin: auto;
+    }
+
+    @keyframes vyjeti {
+        from {
+        bottom: -100px;
+        }
+        to {
+        bottom: 20px;
+        }
+    }
+
+    @keyframes zajeti {
+        from {
+        bottom: 20px;
+        }
+        to {
+        bottom: -100%;
+        }
     }

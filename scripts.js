@@ -55,5 +55,3 @@
         document.getElementById("countdown").innerHTML = "Už spolu jsme!";
     }
     }, 1000);
-
-    

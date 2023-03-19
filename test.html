@@ -1,121 +1,91 @@
-<div class="phone">
-  <div class="dm-container sent">
-    <div class="dm-bubble sent">
-      <p class="dm-text">Ahoj, jak se máš?</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Oznámení</title>
+    <style>
+/* Oznámení */
+      #oznameni {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+      }
+      
+      #oznameni.zobrazit {
+        display: block;
+        animation: vyjeti 0.5s forwards;
+      }
+
+      #oznameni.zavrit {
+        animation: zajeti 0.5s forwards;
+      }
+
+      #zavrit {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 20px;
+        height: 20px;
+        background-color: #ddd;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      @keyframes vyjeti {
+        from {
+          bottom: -100px;
+        }
+        to {
+          bottom: 20px;
+        }
+      }
+
+      @keyframes zajeti {
+        from {
+          bottom: 20px;
+        }
+        to {
+          bottom: -200px;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="oznameni">
+      <p>Toto je oznámení. Kliknutím na tlačítko ho můžete odstranit.</p>
+      <div id="zavrit">X</div>
     </div>
-    <p class="dm-time">20:30</p>
-  </div>
-  <div class="dm-container received">
-    <div class="dm-avatar">
-      <img src="https://example.com/profile.jpg" alt="Profilová fotka">
-    </div>
-    <div class="dm-bubble received">
-      <p class="dm-text">Dobře, díky. A ty?</p>
-    </div>
-    <p class="dm-time">20:35</p>
-  </div>
-  <div class="dm-container sent">
-    <div class="dm-bubble sent">
-      <p class="dm-text">Taky dobře, co dneska děláš?</p>
-    </div>
-    <p class="dm-time">20:40</p>
-  </div>
-</div>
+    <script>
+      // Funkce pro zobrazení oznámení
+      function zobrazitOznameni() {
+        document.getElementById("oznameni").classList.add("zobrazit");
+      }
 
+      // Funkce pro skrytí oznámení
+      function skrytOznameni() {
+        document.getElementById("oznameni").classList.add("zavrit");
+      }
 
+      // Připojení funkce k tlačítku pro skrytí oznámení
+      document.getElementById("zavrit").addEventListener("click", function() {
+        skrytOznameni();
+      });
 
-
-<style>
-
-*{
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.phone {
-  position: relative;
-  width: 375px;
-  height: 667px;
-  background-color: #000;
-  border: 1px solid #000000;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.dm-container {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-end;
-  margin: 20px 0;
-}
-
-.dm-profile-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.dm-bubble {
-  color: #333;
-  padding: 8px 12px;
-  border-radius: 20px;
-  max-width: 70%;
-  margin: 0 10px;
-}
-
-.dm-bubble.sent{
-  background-color: #262626;
-}
-
-.dm-bubble.received{
-  border: 1px solid #363636;
-  background-color: #000;
-}
-
-.dm-bubble:before {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  right: 30px;
-  border: 8px solid transparent;
-  border-top-color: #f3f3f3;
-}
-
-.dm-time {
-  font-size: 12px;
-  color: #999;
-  margin: 0 10px;
-}
-
-.dm-text {
-  color: #fff;
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.dm-container.received {
-  flex-direction: row;
-  align-items: flex-end;
-}
-
-.dm-avatar {
-  width: 40px;
-  height: 40px;
-  overflow: hidden;
-  border-radius: 50%;
-  margin: 0 10px;
-}
-
-.dm-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.dm-bubble {
-  margin: 0 10px 0 0;
-}
-
-
-</style>
+      // Zobrazení oznámení po načtení stránky
+      window.onload = zobrazitOznameni;
+    </script>
+  </body>
+</html>

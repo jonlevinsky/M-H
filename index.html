@@ -34,6 +34,31 @@
       <p>~ 18. 3. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/cFfza8hfc1fsZdRu8">50.111252, 14.484115 ~</a></p>
   </div>
 
+  <div id="oznameni">
+    <h1>! Důležité oznámení !</h1>
+    <p>Miluju Tě, nemohl bych bez Tebe žít. S Tebou mám všechno to, co jsem vždy hledal - lásku, štěstí a bezpečí.</p>
+  <div id="zavrit"><x>X<x></div>
+    
+    <script>
+    // Funkce pro zobrazení oznámení
+    function zobrazitOznameni() {
+        document.getElementById("oznameni").classList.add("zobrazit");
+    }
+
+    // Funkce pro skrytí oznámení
+    function skrytOznameni() {
+        document.getElementById("oznameni").classList.add("zavrit");
+    }
+
+    // Připojení funkce k tlačítku pro skrytí oznámení
+    document.getElementById("zavrit").addEventListener("click", function() {
+        skrytOznameni();
+    });
+
+    // Zobrazení oznámení po načtení stránky
+    window.onload = zobrazitOznameni;
+    </script>
+
   </body>
 
 </html>

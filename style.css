@@ -75,8 +75,26 @@ body {
         margin-left: 100px;
         font-weight: 300;
     }
+    h5 {
+        margin-top: 20px;
+        margin-left: 150px;
+        font-weight: 300;
+        font-size: 20px;
+    }
+    h4 {
+        margin-top: 20px;
+        font-size: 30px;
+        margin-left: 100px;
+        font-weight: 300;
+    }
     p {
         margin-left: 150px;
+        font-weight: 100;
+        font-style: italic;
+        font-size: 20px;
+    }
+    p3 {
+        margin-left: 200px;
         font-weight: 100;
         font-style: italic;
         font-size: 20px;
@@ -108,6 +126,39 @@ body {
     p:hover a{
         opacity: 1;
         transition: 0.1s ease-in-out;
+    }
+    p3:hover p1{
+        opacity: 0;
+        transition: 0.1s ease-in-out;
+    }
+    p3:hover a{
+        opacity: 1;
+        transition: 0.1s ease-in-out;
+    }
+
+/* Heslo */
+    #heslo {
+        text-align: center;
+        font-weight: 400;
+        margin-top: 50px;  
+    }
+
+    button {
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.61);
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgb(0, 0, 0);
+        opacity: 75%;
+        width: 100px;
+        height: 30px;
+    }
+    input {
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.61);
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgb(0, 0, 0);
+        opacity: 50%;
+        height: 30px;
     }
 
 /* Oznámení */

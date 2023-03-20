@@ -48,4 +48,4 @@
         var ddays = days + dd + "♡";
         document.getElementById("countdown").innerHTML = mmonths + "& " + ddays;
     }
-    }, 10000);
+    }, 1000);

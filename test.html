@@ -1,91 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Oznámení</title>
-    <style>
-/* Oznámení */
-      #oznameni {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 300px;
-        padding: 20px;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        z-index: 9999;
+<head>
+	<title>Zabezpečená stránka</title>
+</head>
+<body>
+	<h1>Vítejte na zabezpečené stránce</h1>
+	<p>Prosím, zadejte heslo pro zobrazení obsahu:</p>
+	<input type="password" id="password">
+	<button onclick="showContent()">Odeslat</button>
+	<div id="content" style="display:none;">
+		<p>Toto je obsah, který se zobrazí pouze po správném zadání hesla.</p>
+	</div>
+	<script>
+    function showContent() {
+      var password = document.getElementById("password").value;
+      if (password === "SECRET_PASSWORD") {
+        document.getElementById("content").style.display = "block";
+      } else {
+        alert("Heslo není správné!");
       }
-      
-      #oznameni.zobrazit {
-        display: block;
-        animation: vyjeti 0.5s forwards;
-      }
-
-      #oznameni.zavrit {
-        animation: zajeti 0.5s forwards;
-      }
-
-      #zavrit {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        width: 20px;
-        height: 20px;
-        background-color: #ddd;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 20px;
-        font-size: 14px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-
-      @keyframes vyjeti {
-        from {
-          bottom: -100px;
-        }
-        to {
-          bottom: 20px;
-        }
-      }
-
-      @keyframes zajeti {
-        from {
-          bottom: 20px;
-        }
-        to {
-          bottom: -200px;
-        }
-      }
-
-    </style>
-  </head>
-  <body>
-    <div id="oznameni">
-      <p>Toto je oznámení. Kliknutím na tlačítko ho můžete odstranit.</p>
-      <div id="zavrit">X</div>
-    </div>
-    <script>
-      // Funkce pro zobrazení oznámení
-      function zobrazitOznameni() {
-        document.getElementById("oznameni").classList.add("zobrazit");
-      }
-
-      // Funkce pro skrytí oznámení
-      function skrytOznameni() {
-        document.getElementById("oznameni").classList.add("zavrit");
-      }
-
-      // Připojení funkce k tlačítku pro skrytí oznámení
-      document.getElementById("zavrit").addEventListener("click", function() {
-        skrytOznameni();
-      });
-
-      // Zobrazení oznámení po načtení stránky
-      window.onload = zobrazitOznameni;
-    </script>
-  </body>
+    }
+  </script>
+</body>
 </html>

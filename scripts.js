@@ -1,6 +1,6 @@
 // Counter
     // zadání data
-    var countDownDate = new Date("January 28, 2023 00:00:00").getTime();
+    var countDownDate = new Date("January 27, 2023 00:00:00").getTime();
         
     // aktualizace časovače každou sekundu
     var x = setInterval(function() {
@@ -12,8 +12,8 @@
     var distance = now - countDownDate;
 
     // výpočet dnů, hodin, minut a sekund
-    var months = Math.floor(distance / ((1000 * 60 * 60 * 24 + 1) * 30));
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24) + 1 - 30 * months);
+    var months = Math.floor(distance / ((1000 * 60 * 60 * 24) * 30));
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24) - 30 * months);
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);

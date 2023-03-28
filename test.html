@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Zabezpečená stránka</title>
-</head>
-<body>
-	<h1>Vítejte na zabezpečené stránce</h1>
-	<p>Prosím, zadejte heslo pro zobrazení obsahu:</p>
-	<input type="password" id="password">
-	<button onclick="showContent()">Odeslat</button>
-	<div id="content" style="display:none;">
-		<p>Toto je obsah, který se zobrazí pouze po správném zadání hesla.</p>
-	</div>
-	<script>
-    function showContent() {
-      var password = document.getElementById("password").value;
-      if (password === "SECRET_PASSWORD") {
-        document.getElementById("content").style.display = "block";
-      } else {
-        alert("Heslo není správné!");
-      }
-    }
-  </script>
-</body>
+  <head>
+    <title>Stránka s ověřením heslem</title>
+  </head>
+  <body>
+    <div id="obsah" style="display: none;">
+      Tento obsah je viditelný pouze po zadání správného hesla.
+    </div>
+    <form id="formular">
+      <label for="heslo">Heslo:</label>
+      <input type="password" id="heslo">
+      <button type="submit">Odeslat</button>
+    </form>
+    <script>
+      const spravneHeslo = "tajneheslo"; // definujeme správné heslo
+
+const formular = document.getElementById("formular");
+formular.addEventListener("submit", function(event) {
+  event.preventDefault(); // zamezíme defaultnímu chování formuláře (odeslání)
+  
+  const hesloInput = document.getElementById("heslo");
+  const zadaneHeslo = hesloInput.value; // získáme hodnotu zadaného hesla
+  
+  if (zadaneHeslo === spravneHeslo) {
+    const obsah = document.getElementById("obsah");
+    obsah.style.display = "block"; // zobrazíme obsah stránky
+  } else {
+    alert("Zadané heslo není správné."); // upozorníme uživatele na chybu
+  }
+});
+
+    </script>
+  </body>
 </html>

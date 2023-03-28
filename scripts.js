@@ -1,6 +1,6 @@
 // Counter
     // zadání data
-    var countDownDate = new Date("January 28, 2023 00:00:00").getTime();
+    var countDownDate = new Date("January 27, 2023 00:00:00").getTime();
         
     // aktualizace časovače každou sekundu
     var x = setInterval(function() {

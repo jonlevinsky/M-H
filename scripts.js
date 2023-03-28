@@ -13,7 +13,7 @@
 
     // výpočet dnů, hodin, minut a sekund
     var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24) - 30 * months - 29);
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24) - 30 * months);
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);

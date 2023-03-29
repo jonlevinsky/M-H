@@ -21,8 +21,12 @@
     //skloňování
     if (months > 1) {
         mm = " Měsíců ";
-    } else {
-        mm = " Měsíc ";
+    } else { 
+								if (months == 2) {
+           mm = " Měsíce ";
+        } else { 
+          mm = " Měsíc ";
+        }
     }
     if (days > 1) {
         dd = " Dní ";

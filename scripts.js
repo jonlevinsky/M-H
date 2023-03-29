@@ -50,7 +50,7 @@
 
     // vypsání výsledku do elementu na stránce
     if (days < 1) {
-        document.getElementById("countdown").innerHTML = "✨ Výročí " + months + mm + " ✨";
+        document.getElementById("countdown").innerHTML = "✨ Výročí: " + months + mm + " ✨";
     } else {
         var mmonths = "♡ " + months + mm;
         var ddays = days + dd + "♡";

@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Randomizer</title>
+	<title>Náhodný text</title>
+	<script>
+		window.onload = function() {
+		  var texts = ["Miluju Tě, nemohl bych bez Tebe žít. S Tebou mám všechno to, co jsem vždy hledal - lásku, štěstí a bezpečí.", "Bruh", "Ahoj", "Kekw", "Sus", "Ne"]; // seznam textových řetězců
+		  var randomNumber = Math.floor(Math.random() * texts.length); // náhodné číslo od 0 do počtu položek v seznamu
+		  var output = document.getElementById("oznamenitext"); // získání odkazu na výstupní element
+		  output.innerHTML = texts[randomNumber]; // výběr a výpis náhodného textového řetězce
+		};
+	  </script>
 </head>
 <body>
-	<div id="randomizeMe">
-		<div class="random-item">Item 1</div>
-		<div class="random-item">Item 2</div>
-		<div class="random-item">Item 3</div>
-		<div class="random-item">Item 4</div>
-		<div class="random-item">Item 5</div>
-		<div class="random-item">Item 6</div>
-	</div>
-	<button onclick="randomize()">Randomize</button>
-	<script>
-		function randomize() {
-			var container = document.getElementById("randomizeMe");
-			for (var i = container.children.length; i >= 0; i--) {
-				container.appendChild(container.children[Math.random() * i | 0]);
-			}
-		}
-	</script>
+	<p id="oznamenitext"></p>
 </body>
 </html>

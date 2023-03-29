@@ -43,9 +43,9 @@
 
   <div id="oznameni">
     <h1>! Důležité oznámení !</h1>
-    <p>Miluju Tě, nemohl bych bez Tebe žít. S Tebou mám všechno to, co jsem vždy hledal - lásku, štěstí a bezpečí.</p>
+    <p id="oznamenitext">.</p>
   <div id="zavrit"><x>X<x></div>
- 
+
     <script>
       // Funkce pro zobrazení oznámení
       function zobrazitOznameni() {
@@ -59,8 +59,18 @@
       document.getElementById("zavrit").addEventListener("click", function() {
           skrytOznameni();
       });
+
+      function randomtext() {
+        var texts = ["Miluju Tě, nemohl bych bez Tebe žít. S Tebou mám všechno to, co jsem vždy hledal - lásku, štěstí a bezpečí.", "Milovaná princezno, jsi pro mě všechno. Tvoje krása a chytrost mě fascinují a Tvá láska a péče mi dodávají klid a štěstí. Jsem vděčný, že jsi se stala mou partnerkou a slibuji Ti, že Tě budu chránit a milovat po celý náš společný život.", "Mým potěšením je napsat ti něco zamilovaného a výjimečného, mé milovaná. S velkým nadšením ti chci poslat ten nejmilejší pozdrav na dnešek - doufám, že tvůj den bude stejně nádherný jako ty jsi pro mě. Tvá láska mi dodává sílu a smysl, a každý den, kdy jsem s tebou, se cítím jako nejšťastnější člověk na světě. Děkuji, že jsi se mnou v tomto světě.", "Miluju Tě", "Jsi Úžasná", "Dneska Ti to moc sluší krásko"]; // seznam textových řetězců
+        var randomNumber = Math.floor(Math.random() * texts.length); // náhodné číslo od 0 do počtu položek v seznamu
+        var output = document.getElementById("oznamenitext"); // získání odkazu na výstupní element
+        output.innerHTML = texts[randomNumber]; // výběr a výpis náhodného textového řetězce
+      };
       // Zobrazení oznámení po načtení stránky
-      window.onload = zobrazitOznameni;
+      window.onload = function() {
+        zobrazitOznameni();
+        randomtext();
+      };
     </script>
 
     <script>

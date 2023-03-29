@@ -1,6 +1,6 @@
 // Counter
     // zadání data
-    var countDownDate = new Date("January 27, 2023 00:00:00").getTime();
+    var countDownDate = new Date("January 28, 2023 00:00:00").getTime();
         
     // aktualizace časovače každou sekundu
     var x = setInterval(function() {
@@ -19,25 +19,29 @@
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     //skloňování
-    if (months > 1) {
-        mm = " Měsíců ";
-    } else { 
-								if (months == 2) {
-           mm = " Měsíce ";
-        } else { 
-          mm = " Měsíc ";
-        }
-    }
-    if (days > 1) {
-        dd = " Dní ";
+    if (months == 2) {
+        mm = " Měsíce ";
+    } else if (months == 1) { 
+        mm = " Měsíc ";
     } else {
-        dd = " Den ";
+        mm = " Měsíců "
     }
+
+
+    if (days == 2) {
+        dd = " Dny ";
+    } else if (days == 1) { 
+        dd = " Den ";
+    } else {
+        dd = " Dní "
+    }
+
     if (hours > 1) {
         hh = " Hodin ";
     } else {
         hh = " Hodinu ";
     }
+
     if (minutes > 1) {
         mmm = " Minut ";
     } else {

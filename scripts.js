@@ -18,7 +18,7 @@
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    //skloňování
+    //skloňování 
     if (months == 2) {
         mm = " Měsíce ";
     } else if (months == 1) { 

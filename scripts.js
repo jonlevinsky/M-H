@@ -28,7 +28,7 @@
     }
 
 
-    if (days == 2) {
+    if (days == 2 || days == 3 || days == 4) {
         dd = " Dny ";
     } else if (days == 1) { 
         dd = " Den ";

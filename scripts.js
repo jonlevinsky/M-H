@@ -12,7 +12,7 @@
     var distance = now - countDownDate;
 
     // výpočet dnů, hodin, minut a sekund
-    var months = Math.floor(distance / ((1000 * 60 * 60 * 24) * 30));
+    var months = Math.floor(distance / (1000 * 60 * 60 * 24 * (365.25/12)));
     var days = Math.floor(distance / (1000 * 60 * 60 * 24) - 30 * months);
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));

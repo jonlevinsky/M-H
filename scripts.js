@@ -37,7 +37,7 @@ var x = setInterval(function() {
     if (days == 0) {
         document.getElementById("countdown").innerHTML = "✨ Výročí: " + months + mm + " ✨";
         const colors = ['#460C68', '#7F167F', '#CB1C8D', '#F56EB3'];
-    const numberOfPieces = 250;
+    const numberOfPieces = 100;
     
     for (let i = 0; i < numberOfPieces; i++) {
         createConfettiPiece();

@@ -1,46 +1,45 @@
-// Counter
-    // zadání data
-    var countDownDate = new Date("January 28, 2023 00:00:00").getTime();
+// aktualizace časovače každou sekundu
+var x = setInterval(function() {
+   
+    //počítání
+    let startDate = new Date("28 January 2023");
+    let today = new Date();
+    let months = (today.getFullYear() - startDate.getFullYear()) * 12 + (today.getMonth() - startDate.getMonth());
+    if (today.getDate() < startDate.getDate()) {
+        months--;
+    }
+    let days = today.getDate() - startDate.getDate();
+    if (days < 0) {
+        days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    }
+
+    //skloňování
         
-    // aktualizace časovače každou sekundu
-    var x = setInterval(function() {
+        //měsíce
+        if (months == 2 || months == 3 || months == 4) {
+            mm = " Měsíce ";
+        } else if (months == 1) { 
+            mm = " Měsíc ";
+        } else {
+            mm = " Měsíců "
+        }
 
-    // získání aktuálního času
-    var now = new Date().getTime();
-
-    // výpočet zbývajícího času
-    var distance = now - countDownDate;
-
-    // výpočet dnů, hodin, minut a sekund
-    var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24) - 30 * months - 1);
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    //skloňování 
-    if (months == 2 || months == 3 || months == 4) {
-        mm = " Měsíce ";
-    } else if (months == 1) { 
-        mm = " Měsíc ";
-    } else {
-        mm = " Měsíců "
-    }
-
-    if (days == 2 || days == 3 || days == 4) {
-        dd = " Dny ";
-    } else if (days == 1) { 
-        dd = " Den ";
-    } else {
-        dd = " Dní "
-    }
-
-    // vypsání výsledku do elementu na stránce
-    if (days < 1) {
+        //dny
+        if (days == 2 || days == 3 || days == 4) {
+            dd = " Dny ";
+        } else if (days == 1) { 
+            dd = " Den ";
+        } else {
+            dd = " Dní "
+        }
+    
+    //zápis
+    if (days == 0) {
         document.getElementById("countdown").innerHTML = "✨ Výročí: " + months + mm + " ✨";
     } else {
         var mmonths = "♡ " + months + mm;
         var ddays = days + dd + "♡";
         document.getElementById("countdown").innerHTML = mmonths + "& " + ddays;
     }
+
     }, 1000);

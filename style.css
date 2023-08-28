@@ -13,6 +13,10 @@
     text-decoration: none;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     background-color: #121013;
     background-image: url(background.png);
@@ -46,7 +50,7 @@ body {
 
         #countdown {
             margin: auto;
-            max-width: 450px;
+            max-width: 300px;
             font-size: 90px;
             text-align: center;
         }
@@ -65,7 +69,7 @@ body {
         #countdown {
             font-size: 90px;
             text-align: center;
-            max-width: 300px;
+            min-width: 300px;
         }
         #oznameni {
             max-width: auto;
@@ -178,6 +182,7 @@ body {
     }
 
     #oznameni.zobrazit {
+        position: fixed;
         display: block;
         animation: vyjeti 0.5s forwards;
     }
@@ -224,3 +229,31 @@ body {
         bottom: -100%;
         }
     }
+
+    .confetti {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 10px;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .confetti .confetti-piece {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px 5px 10px 10px;
+      }
+      
+      @keyframes confetti {
+        from {
+          transform: translateY(0) rotateZ(0deg);
+          opacity: 1;
+        }
+        
+        to {
+          transform: translateY(1000px) rotateZ(360deg);
+          opacity: 0;
+        }
+      }

@@ -36,6 +36,29 @@ var x = setInterval(function() {
     //zápis
     if (days == 0) {
         document.getElementById("countdown").innerHTML = "✨ Výročí: " + months + mm + " ✨";
+        const colors = ['#460C68', '#7F167F', '#CB1C8D', '#F56EB3'];
+    const numberOfPieces = 250;
+    
+    for (let i = 0; i < numberOfPieces; i++) {
+        createConfettiPiece();
+    }
+    
+    function createConfettiPiece() {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti-piece');
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+        document.querySelector('.confetti').appendChild(confetti);
+        
+        const animationDuration = Math.random() * 3 + 2;
+        
+        confetti.style.animation = `confetti ${animationDuration}s ease-in-out forwards`;
+        
+        setTimeout(() => {
+            confetti.remove();
+            createConfettiPiece();
+        }, animationDuration * 1000);}
+        
     } else {
         var mmonths = "♡ " + months + mm;
         var ddays = days + dd + "♡";

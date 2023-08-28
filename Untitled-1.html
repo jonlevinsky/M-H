@@ -1,51 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Výročí</title>
+<style>
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.confetti .confetti-piece {
+  position: absolute;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+@keyframes confetti {
+  from {
+    transform: translateY(0) rotateZ(0deg);
+    opacity: 1;
+  }
+  
+  to {
+    transform: translateY(500px) rotateZ(360deg);
+    opacity: 0;
+  }
+}
+</style>
 </head>
 <body>
-    <p id="months"></p>
-    <p id="days"></p>
-    <p id="countdown"></p>
 
-    <script>
-        let startDate = new Date(2023, 1, 28); // 28. ledna 2023
-        let today = new Date(2024, 8, 2);
-        let months = (today.getFullYear() - startDate.getFullYear()) * 12 + (today.getMonth() - startDate.getMonth());
-        if (today.getDate() < startDate.getDate()) {
-            months--;
-        }
-        let days = today.getDate() - startDate.getDate();
-        if (days < 0) {
-            days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
-        }
-        document.getElementById("months").innerHTML = "Měsíců: " + months;
-        document.getElementById("days").innerHTML = "Dní: " + days;
+<div class="confetti"></div>
 
+<script>
+const colors = ['#ff3838', '#ff4d4d', '#ff5e5e', '#ff3838', '#ff4d4d', '#ff5e5e'];
+const numberOfPieces = 250;
 
-        if (months == 2 || months == 3 || months == 4) {
-            mm = " Měsíce ";
-        } else if (months == 1) { 
-            mm = " Měsíc ";
-        } else {
-            mm = " Měsíců "
-        }
+for (let i = 0; i < numberOfPieces; i++) {
+    createConfettiPiece();
+}
 
-        if (days == 2 || days == 3 || days == 4) {
-            dd = " Dny ";
-        } else if (days == 1) { 
-            dd = " Den ";
-        } else {
-            dd = " Dní "
-        }
+function createConfettiPiece() {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti-piece');
+    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+    document.querySelector('.confetti').appendChild(confetti);
+    
+    const animationDuration = Math.random() * 3 + 2;
+    
+    confetti.style.animation = `confetti ${animationDuration}s ease-in-out forwards`;
+    
+    setTimeout(() => {
+        confetti.remove();
+        createConfettiPiece();
+    }, animationDuration * 1000);
+}
+</script>
 
-        if (days == 0) {
-            document.getElementById("countdown").innerHTML = "✨ Výročí: " + months + mm + " ✨";
-        } else {
-            var mmonths = "♡ " + months + mm;
-            var ddays = days + dd + "♡";
-            document.getElementById("countdown").innerHTML = mmonths + "& " + ddays;
-        }
-    </script>
 </body>
 </html>

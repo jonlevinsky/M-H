@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Převod celé noty s tečkou na osminové noty</title>
+</head>
+<body>
+    <h1>Notový převodník</h1>
+    <p>Zadejte celou notu (s tečkou):</p>
+    <input type="text" id="notaInput">
+    <button onclick="prevod()">Převést na osminové noty</button>
+    <p>Výsledek:</p>
+    <div id="vysledek"></div>
+
+    <script>
+        function prevod() {
+            const notaInput = document.getElementById("notaInput").value;
+
+            // Kontrola, zda je zápis ve správném formátu (1.)
+                const osmin = 8;
+                const tecka = osmin / 2; // Tečka přidává polovinu délky osminové noty
+                const tecka2 = tecka / 2;
+                const tecka3 = tecka2 / 2;
+                const vysledek = [];
+                //tři tečky
+            if (/^\d+\...$/.test(notaInput)) {
+                    for (let i = 0; i < 1; i++) {
+                        vysledek.push(osmin * parseInt(notaInput) + tecka + tecka2 + tecka3 + ' Not osminových');
+                    }
+
+                    document.getElementById("vysledek").innerText = vysledek.join(" ");
+
+                 //dvě tečky
+            }else if (/^\d+\..$/.test(notaInput)) {
+                for (let i = 0; i < 1; i++) {
+                    vysledek.push(osmin * parseInt(notaInput) + tecka + tecka2 + ' Not osminových');
+                }
+
+                document.getElementById("vysledek").innerText = vysledek.join(" ");
+                
+                //jedna tečka
+            }else if (/^\d+\.$/.test(notaInput)) {
+                for (let i = 0; i < 1; i++) {
+                    vysledek.push(osmin * parseInt(notaInput) + tecka + ' Not osminových');
+                }
+
+                document.getElementById("vysledek").innerText = vysledek.join(" ");
+
+            } else {
+                for (let i = 0; i < 1; i++) {
+                    vysledek.push(osmin * parseInt(notaInput) + ' Not osminových');
+                }
+                document.getElementById("vysledek").innerText = vysledek.join(" ");
+            }
+            }
+    </script>
+</body>
+</html>

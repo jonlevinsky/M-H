@@ -1,95 +1,639 @@
 <!DOCTYPE html>
-
 <html lang="cs">
-
-  <head>
-
-    <title>♡ 𝓜&𝓗 ♡</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="icon.png">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="scripts.js"></script>
-
-  </head>
-
-  <body>
-  <div class="confetti"></div>
-  <div id="counter">
-    <h1>Marcelka & Honzík</h1>
-    <div id="countdown"></div>
-    <h2>~ 28. 1. 2023 ~</h2>
-  </div>
-  
-  <div id="heslo">
-    <input type="password" id="password">
-    <button onclick="showContent()">Zobrazit</button>
-  </div>
-
-  <div id="goals" style="display:none;">
-    <h3>Seznámení:</h3>
-      <p>~ 16. 1. 2023 ~</p>
-    <h3>Setkání:</h3>
-      <p>~ 28. 2. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/aS8mmtCG1JGbdopd6">50.0844828, 14.4133795 ~</a></p>
-    <h3>První Pusa:</h3>
-      <p>~ 28. 2. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/vdWRGC4AwAiCtJZM7">50.082080, 14.423738 ~</a></p>
-    <h3>První Rande:</h3>
-      <p>~ 17. 3. 2023 ~</p>
-    <h3>První Polibek:</h3>
-      <p>~ 17. 3. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/aFKZwoAbc2MfwFs2A">50.082826, 14.409696 ~</a></p>
-    <h3>První Intimní Doteky:</h3>
-      <p>~ 18. 3. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/cFfza8hfc1fsZdRu8">50.111252, 14.484115 ~</a></p>
-    <h3>První Milování:</h3>
-      <p>~ 14. 4. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/Hoz5NQSYoGpvmr8V9">50.106047, 14.491166 ~</a></p>
-    <h3>První Přespávačka:</h3>
-      <p>~ 9. 6. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/Hoz5NQSYoGpvmr8V9">50.106047, 14.491166 ~</a></p>
-  </div>
-
-  <div id="oznameni">
-    <h1>! Důležité oznámení !</h1>
-    <p id="oznamenitext">.</p>
-  <div id="zavrit"><x>X<x></div>
-
-    <script>
-      // Funkce pro zobrazení oznámení
-      function zobrazitOznameni() {
-          document.getElementById("oznameni").classList.add("zobrazit");
-      }
-      // Funkce pro skrytí oznámení
-      function skrytOznameni() {
-          document.getElementById("oznameni").classList.add("zavrit");
-      }
-      // Připojení funkce k tlačítku pro skrytí oznámení
-      document.getElementById("zavrit").addEventListener("click", function() {
-          skrytOznameni();
-      });
-
-      function randomtext() {
-        var texts = ["Miluju Tě, nemohl bych bez Tebe žít. S Tebou mám všechno to, co jsem vždy hledal - lásku, štěstí a bezpečí.", "Milovaná princezno, jsi pro mě všechno. Tvoje krása a chytrost mě fascinují a Tvá láska a péče mi dodávají klid a štěstí. Jsem vděčný, že jsi se stala mou partnerkou a slibuji Ti, že Tě budu chránit a milovat po celý náš společný život.", "Mým potěšením je napsat ti něco zamilovaného a výjimečného, mé milovaná. S velkým nadšením ti chci poslat ten nejmilejší pozdrav na dnešek - doufám, že tvůj den bude stejně nádherný jako ty jsi pro mě. Tvá láska mi dodává sílu a smysl, a každý den, kdy jsem s tebou, se cítím jako nejšťastnější člověk na světě. Děkuji, že jsi se mnou v tomto světě.", "Miluju Tě", "Jsi Úžasná", "Dneska Ti to moc sluší krásko"]; // seznam textových řetězců
-        var randomNumber = Math.floor(Math.random() * texts.length); // náhodné číslo od 0 do počtu položek v seznamu
-        var output = document.getElementById("oznamenitext"); // získání odkazu na výstupní element
-        output.innerHTML = texts[randomNumber]; // výběr a výpis náhodného textového řetězce
-      };
-      // Zobrazení oznámení po načtení stránky
-      window.onload = function() {
-        zobrazitOznameni();
-        randomtext();
-      };
-    </script>
-
-    <script>
-      function showContent() {
-        var password = document.getElementById("password").value;
-        var heslo = document.getElementById("heslo");
-        if (password === "princezna") {
-          document.getElementById("goals").style.display = "block";
-          heslo.remove();
-        } else {
-          alert("Zapomněla jsi snad heslo princezno?");
-        }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcelka & Honzík</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #e0f2fe;
+      --card-bg: rgba(255, 255, 255, 0.2);
+      --text-color: #1e3a8a;
+      --text-secondary: #64748b;
+      --circle-bg: #bfdbfe;
+      --circle-progress: #2563eb;
+      --heart-color: rgba(59, 130, 246, 0.1);
     }
-    </script>
 
-  </body>
+    .dark {
+      --bg-color: #1e293b;
+      --card-bg: rgba(30, 41, 59, 0.3);
+      --text-color: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --circle-bg: #475569;
+      --circle-progress: #f97316;
+      --heart-color: rgba(249, 115, 22, 0.1);
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      transition: background-color 0.3s, color 0.3s;
+      position: relative;
+      overflow: auto;
+    }
+
+    /* Heart background */
+    .heart {
+      position: absolute;
+      bottom: -100px;
+      fill: var(--heart-color);
+      opacity: 0.8;
+      animation: float 15s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--text-secondary);
+      color: var(--text-color);
+      padding: 0.5rem;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 380px;
+      padding: 1.5rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .title {
+      font-size: clamp(1.25rem, 5vw, 1.5rem);
+      font-weight: 600;
+      color: var(--text-color);
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .progress-circle-container {
+      position: relative;
+      width: clamp(150px, 45vw, 180px);
+      height: clamp(150px, 45vw, 180px);
+      margin: 0 auto 1rem;
+      cursor: pointer;
+    }
+
+    .progress-circle {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+      transform-origin: center;
+    }
+
+    .progress-circle-bg {
+      fill: none;
+      stroke: var(--circle-bg);
+      stroke-width: 8;
+    }
+
+    .progress-circle-value {
+      fill: none;
+      stroke: url(#progressGradient);
+      stroke-width: 8;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.5s ease-out;
+    }
+
+    .progress-circle-text {
+      fill: var(--text-color);
+      font-size: clamp(10px, 3vw, 12px);
+      font-weight: 500;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      transform: rotate(90deg);
+      transform-origin: center;
+    }
+
+    .time-display {
+      font-size: clamp(1.25rem, 4vw, 1.5rem);
+      font-weight: 600;
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.3px;
+    }
+
+    .subtitle {
+      font-size: clamp(0.75rem, 3vw, 0.875rem);
+      color: var(--text-secondary);
+      margin-top: 0.75rem;
+      opacity: 0.8;
+    }
+
+    /* Confetti styles */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background-color: #777;
+      opacity: 0;
+      top: 0;
+      animation: confetti-fall 6s ease-out forwards;
+      z-index: 1000;
+    }
+
+    @keyframes confetti-fall {
+      0% {
+        opacity: 1;
+        top: -10px;
+        transform: translateX(0) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        top: 100vh;
+        transform: translateX(50px) rotate(720deg);
+      }
+    }
+
+    /* Goals styles */
+    #goals {
+      display: none;
+      background: var(--card-bg);
+      border-radius: 1rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 380px;
+      padding: 1rem;
+      margin-top: 0.75rem;
+      text-align: left;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #goals.visible {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #goals h3 {
+      font-size: clamp(0.875rem, 3.5vw, 1rem);
+      font-weight: 600;
+      color: var(--text-color);
+      margin: 0.5rem 0 0.25rem;
+    }
+
+    #goals p {
+      font-size: clamp(0.75rem, 3vw, 0.875rem);
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    #goals p1 {
+      color: var(--text-secondary);
+      margin: 0 0.25rem;
+    }
+
+    #goals a {
+      color: var(--circle-progress);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    #goals a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    #goals hr {
+      border: none;
+      border-top: 1px solid var(--text-secondary);
+      opacity: 0.3;
+      margin: 0.5rem 0;
+    }
+
+    .close-goals {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: none;
+      border: none;
+      color: var(--text-color);
+      font-size: clamp(0.875rem, 3vw, 1rem);
+      cursor: pointer;
+      padding: 0.25rem;
+    }
+
+    .close-goals:hover {
+      opacity: 0.8;
+    }
+
+    /* Media Queries for Mobile */
+    @media (max-width: 600px) {
+      body {
+        padding: 0.5rem;
+      }
+
+      .card {
+        max-width: 90%;
+        padding: 1rem;
+      }
+
+      .progress-circle-container {
+        width: clamp(120px, 40vw, 150px);
+        height: clamp(120px, 40vw, 150px);
+      }
+
+      .progress-circle-bg,
+      .progress-circle-value {
+        stroke-width: 6;
+      }
+
+      .theme-toggle {
+        width: 32px;
+        height: 32px;
+      }
+
+      .theme-toggle svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      #goals {
+        max-width: 90%;
+        padding: 0.75rem;
+        margin-top: 0.5rem;
+      }
+
+      .heart {
+        width: clamp(30px, 10vw, 50px) !important;
+        height: clamp(30px, 10vw, 50px) !important;
+      }
+
+      .confetti {
+        width: 8px;
+        height: 8px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .title {
+        font-size: clamp(1rem, 4.5vw, 1.25rem);
+      }
+
+      .time-display {
+        font-size: clamp(1rem, 4vw, 1.25rem);
+      }
+
+      .subtitle {
+        font-size: clamp(0.625rem, 2.5vw, 0.75rem);
+      }
+
+      .progress-circle-text {
+        font-size: clamp(8px, 2.5vw, 10px);
+      }
+
+      #goals h3 {
+        font-size: clamp(0.75rem, 3vw, 0.875rem);
+      }
+
+      #goals p {
+        font-size: clamp(0.625rem, 2.5vw, 0.75rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hearts -->
+  <svg class="heart" style="left: 10%; width: 60px; height: 60px; animation-duration: 12s;">
+    <path d="M30 5C25 0 15 0 10 5C5 10 5 20 10 25L30 45L50 25C55 20 55 10 50 5C45 0 35 0 30 5Z" />
+  </svg>
+  <svg class="heart" style="left: 30%; width: 40px; height: 40px; animation-duration: 15s;">
+    <path d="M20 3.33C16.67 0 10 0 6.67 3.33C3.33 6.67 3.33 13.33 6.67 16.67L20 30L33.33 16.67C36.67 13.33 36.67 6.67 33.33 3.33C30 0 23.33 0 20 3.33Z" />
+  </svg>
+  <svg class="heart" style="left: 50%; width: 80px; height: 80px; animation-duration: 10s;">
+    <path d="M40 6.67C33.33 0 20 0 13.33 6.67C6.67 13.33 6.67 26.67 13.33 33.33L40 60L66.67 33.33C73.33 26.67 73.33 13.33 66.67 6.67C60 0 46.67 0 40 6.67Z" />
+  </svg>
+  <svg class="heart" style="left: 70%; width: 50px; height: 50px; animation-duration: 13s;">
+    <path d="M25 4.17C20.83 0 12.5 0 8.33 4.17C4.17 8.33 4.17 16.67 8.33 20.83L25 37.5L41.67 20.83C45.83 16.67 45.83 8.33 41.67 4.17C37.5 0 29.17 0 25 4.17Z" />
+  </svg>
+  <svg class="heart" style="left: 90%; width: 70px; height: 70px; animation-duration: 11s;">
+    <path d="M35 5.83C29.17 0 17.5 0 11.67 5.83C5.83 11.67 5.83 23.33 11.67 29.17L35 52.5L58.33 29.17C64.17 23.33 64.17 11.67 58.33 5.83C52.5 0 40.83 0 35 5.83Z" />
+  </svg>
+
+  <button class="theme-toggle" id="themeToggle">
+    <svg id="sunIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <svg id="moonIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
+
+  <div class="card">
+    <h1 class="title">Marcelka & Honzík</h1>
+    
+    <div class="progress-circle-container" id="progressCircleContainer">
+      <svg class="progress-circle" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color: var(--circle-progress); stop-opacity: 1" />
+            <stop offset="100%" style="stop-color: var(--circle-progress); stop-opacity: 0.6" />
+          </linearGradient>
+        </defs>
+        <circle class="progress-circle-bg" cx="50" cy="50" r="45"></circle>
+        <circle id="progressCircle" class="progress-circle-value" cx="50" cy="50" r="45" stroke-dasharray="282.74" stroke-dashoffset="282.74"></circle>
+        <text id="progressText1" class="progress-circle-text" x="50" y="45" dy=".3em"></text>
+        <text id="progressText2" class="progress-circle-text" x="50" y="55" dy=".3em"></text>
+      </svg>
+    </div>
+    
+    <div id="timeDisplay" class="time-display"></div>
+    
+    <div class="subtitle">Od 28. ledna 2023</div>
+  </div>
+
+  <div id="goals">
+    <button class="close-goals" id="closeGoals">✕</button>
+    <h3>Seznámení:</h3>
+    <p>~ 16. 1. 2023 ~</p>
+    <hr>
+    <h3>Setkání:</h3>
+    <p>~ 28. 2. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/aS8mmtCG1JGbdopd6">50.0844828, 14.4133795</a></p>
+    <hr>
+    <h3>První Pusa:</h3>
+    <p>~ 28. 2. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/vdWRGC4AwAiCtJZM7">50.082080, 14.423738</a></p>
+    <hr>
+    <h3>První Rande:</h3>
+    <p>~ 17. 3. 2023 ~</p>
+    <hr>
+    <h3>První Polibek:</h3>
+    <p>~ 17. 3. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/aFKZwoAbc2MfwFs2A">50.082826, 14.409696</a></p>
+    <hr>
+    <h3>První Intimní Doteky:</h3>
+    <p>~ 18. 3. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/cFfza8hfc1fsZdRu8">50.111252, 14.484115</a></p>
+    <hr>
+    <h3>První Milování:</h3>
+    <p>~ 14. 4. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/Hoz5NQSYoGpvmr8V9">50.106047, 14.491166</a></p>
+    <hr>
+    <h3>První Přespávačka:</h3>
+    <p>~ 9. 6. 2023 <p1>~</p1><a target="_blank" href="https://goo.gl/maps/Hoz5NQSYoGpvmr8V9">50.106047, 14.491166</a></p>
+  </div>
+
+  <div id="confettiContainer"></div>
+
+  <script>
+    // Start date of the relationship
+    const startDate = new Date('2023-01-28');
+    
+    // DOM elements
+    const timeDisplay = document.getElementById('timeDisplay');
+    const progressCircle = document.getElementById('progressCircle');
+    const progressText1 = document.getElementById('progressText1');
+    const progressText2 = document.getElementById('progressText2');
+    const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+    const confettiContainer = document.getElementById('confettiContainer');
+    const progressCircleContainer = document.getElementById('progressCircleContainer');
+    const goals = document.getElementById('goals');
+    const closeGoals = document.getElementById('closeGoals');
+    
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      
+      sunIcon.style.display = isDark ? 'none' : 'block';
+      moonIcon.style.display = isDark ? 'block' : 'none';
+      
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = 'block';
+    }
+    
+    // Triple-click to show goals
+    let clickCount = 0;
+    progressCircleContainer.addEventListener('click', () => {
+      clickCount++;
+      if (clickCount === 3) {
+        goals.classList.add('visible');
+        clickCount = 0; // Reset counter
+      }
+      // Reset counter if not clicked within 1 second
+      setTimeout(() => {
+        clickCount = 0;
+      }, 1000);
+    });
+
+    // Close goals
+    closeGoals.addEventListener('click', () => {
+      goals.classList.remove('visible');
+    });
+    
+    // Czech declension function
+    function getCorrectCzechForm(count, form1, form2_4, form5plus) {
+      if (count === 0) {
+        return form5plus;
+      }
+      
+      const lastDigit = count % 10;
+      const lastTwoDigits = count % 100;
+      
+      if (lastDigit === 1 && lastTwoDigits !== 11) {
+        return form1;
+      }
+      
+      if (lastDigit >= 2 && lastDigit <= 4 && (lastTwoDigits < 12 || lastTwoDigits > 14)) {
+        return form2_4;
+      }
+      
+      return form5plus;
+    }
+    
+    // Create confetti
+    function createConfetti() {
+      confettiContainer.innerHTML = '';
+      
+      const colors = ['#f97316', '#3b82f6', '#10b981', '#ef4444', '#8b5cf6', '#facc15'];
+      
+      // Reduce confetti count for mobile performance
+      const confettiCount = window.innerWidth < 600 ? 80 : 150;
+      
+      for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = `${Math.random() * 100}vw`;
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.width = `${Math.random() * 8 + 4}px`;
+        confetti.style.height = `${Math.random() * 8 + 4}px`;
+        confetti.style.animationDelay = `${Math.random() * 4}s`;
+        confetti.style.animationDuration = `${Math.random() * 3 + 4}s`;
+        
+        confettiContainer.appendChild(confetti);
+      }
+      
+      // Remove confetti after animation
+      setTimeout(() => {
+        confettiContainer.innerHTML = '';
+      }, 10000);
+    }
+    
+    // Update time and progress
+    function updateTime() {
+      const now = new Date();
+      
+      // Calculate years, months, days
+      let years = now.getFullYear() - startDate.getFullYear();
+      let months = now.getMonth() - startDate.getMonth();
+      
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+      
+      // Calculate remaining days
+      const tempDate = new Date(startDate);
+      tempDate.setFullYear(now.getFullYear());
+      tempDate.setMonth(now.getMonth());
+      
+      let days = now.getDate() - tempDate.getDate();
+      if (days < 0) {
+        const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        days += lastMonth.getDate();
+      }
+      
+      // Check if it's a yearly anniversary
+      const isYearlyAnniversary = now.getDate() === startDate.getDate() && now.getMonth() === startDate.getMonth();
+      
+      // Calculate progress to next yearly anniversary
+      const lastAnniversary = new Date(startDate);
+      lastAnniversary.setFullYear(now.getFullYear() - (now.getMonth() < startDate.getMonth() || (now.getMonth() === startDate.getMonth() && now.getDate() < startDate.getDate()) ? 1 : 0));
+      
+      const nextAnniversary = new Date(lastAnniversary);
+      nextAnniversary.setFullYear(lastAnniversary.getFullYear() + 1);
+      
+      const timeSinceLastAnniversary = now - lastAnniversary;
+      const timeToNextAnniversary = nextAnniversary - lastAnniversary;
+      
+      const progressToNextAnniversary = (timeSinceLastAnniversary / timeToNextAnniversary) * 100;
+      
+      // Update progress circle
+      const circumference = 2 * Math.PI * 45;
+      const offset = circumference - (progressToNextAnniversary / 100) * circumference;
+      progressCircle.style.strokeDasharray = circumference;
+      progressCircle.style.strokeDashoffset = offset;
+      
+      // Update time display and progress text
+      let timeText = '';
+      let circleText1 = '';
+      let circleText2 = '';
+      
+      if (isYearlyAnniversary) {
+        timeText = `${years} ${getCorrectCzechForm(years, "rok", "roky", "let")} výročí`;
+        circleText1 = 'Výročí';
+        circleText2 = `${years} ${getCorrectCzechForm(years, "rok", "roky", "let")}`;
+        createConfetti();
+      } else {
+        if (years > 0) {
+          timeText += `${years} ${getCorrectCzechForm(years, "rok", "roky", "let")}`;
+          circleText1 += `${years}r`;
+        }
+        
+        if (years > 0 && months > 0) {
+          timeText += " a ";
+          circleText1 += " ";
+        }
+        
+        if (months > 0) {
+          timeText += `${months} ${getCorrectCzechForm(months, "měsíc", "měsíce", "měsíců")}`;
+          circleText1 += `${months}m`;
+        }
+        
+        if ((years > 0 || months > 0) && days > 0) {
+          timeText += " a ";
+          circleText1 += " ";
+        }
+        
+        if (days > 0) {
+          timeText += `${days} ${getCorrectCzechForm(days, "den", "dny", "dní")}`;
+          circleText1 += `${days}d`;
+        }
+
+        if (days === 0 && (years > 0 || months > 0)) {
+          circleText1 = 'Výročí';
+          circleText2 = `${years}r ${months}m`;
+        }
+      }
+      
+      timeDisplay.textContent = timeText;
+      progressText1.textContent = circleText1; ;
+      progressText2.textContent = circleText2;
+    }
+    
+    // Initial update
+    updateTime();
+    
+    // Update every minute
+    setInterval(updateTime, 60000);
+  </script>
+</body>
 </html>
